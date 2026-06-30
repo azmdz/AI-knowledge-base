@@ -1,0 +1,114 @@
+{
+  "users": [
+    { "id": "user_alice", "name": "Alice Tanaka", "email": "alice@example.com" },
+    { "id": "user_bob", "name": "Bob Suzuki", "email": "bob@example.com" },
+    { "id": "user_carol", "name": "Carol Yamamoto", "email": "carol@example.com" }
+  ],
+  "articles": [
+    {
+      "title": "社内VPN接続手順（Mac / Windows）",
+      "tags": ["VPN", "セキュリティ", "インフラ"],
+      "authorId": "user_bob",
+      "viewCount": 42,
+      "body": "# 社内VPN接続手順（Mac / Windows）\n\n## 概要\n自宅や外出先から社内ネットワークにアクセスするためのVPN設定手順です。\n\n## 事前準備\n- IT部門からVPN認証情報（ユーザー名・パスワード・サーバーアドレス）を受け取る\n- 2要素認証アプリ（Google Authenticator など）をインストール済みであること\n\n## Mac の場合\n\n1. システム設定 → ネットワーク → 左下の「+」をクリック\n2. インターフェース: VPN、VPNタイプ: IKEv2 を選択\n3. サーバアドレス: `vpn.example.com` を入力\n4. リモートID: `vpn.example.com` を入力\n5. 認証設定でユーザー名とパスワードを入力\n6. 「接続」をクリック\n\n## Windows の場合\n\n1. 設定 → ネットワークとインターネット → VPN → VPN接続を追加\n2. VPNプロバイダー: Windows (ビルトイン)\n3. 接続名: 任意（例: 社内VPN）\n4. サーバー名: `vpn.example.com`\n5. VPNの種類: IKEv2\n6. サインイン情報の種類: ユーザー名とパスワード\n\n## トラブルシューティング\n- 接続できない場合はIT部門（#it-support Slack チャンネル）まで連絡してください\n- パスワードリセットは社内ポータル（portal.example.com）から可能です"
+    },
+    {
+      "title": "Slack チャンネル運用ガイドライン",
+      "tags": ["Slack", "コミュニケーション", "ガイドライン"],
+      "authorId": "user_alice",
+      "viewCount": 58,
+      "body": "# Slack チャンネル運用ガイドライン\n\n## チャンネル命名規則\n\n| プレフィックス | 用途 | 例 |\n|---|---|---|\n| `#proj-` | プロジェクト専用 | `#proj-new-platform` |\n| `#team-` | チーム内連絡 | `#team-frontend` |\n| `#announce-` | 全社告知（投稿制限あり） | `#announce-all` |\n| `#tmp-` | 一時的な議論（3ヶ月で削除） | `#tmp-q4-planning` |\n\n## 投稿マナー\n\n- **メンションは必要最小限に** — `@channel` は緊急時のみ\n- **スレッドを活用** — 返信はスレッドで行い、チャンネルのノイズを減らす\n- **絵文字リアクションで返事** — 簡単な確認はリアクションで済ませる\n- **コードはコードブロックで** — バッククォート3つで囲む\n\n## アーカイブ基準\n6ヶ月以上投稿がないチャンネルは自動的にアーカイブ候補になります。\n継続使用する場合はチャンネル説明に理由を記載してください。"
+    },
+    {
+      "title": "経費精算の手順（Concur利用）",
+      "tags": ["経費精算", "Concur", "総務"],
+      "authorId": "user_carol",
+      "viewCount": 87,
+      "body": "# 経費精算の手順（Concur利用）\n\n## 提出期限\n**毎月末日**までに当月分を提出してください。翌月への持ち越しは原則不可です。\n\n## 手順\n\n### 1. Concurにログイン\n社内ポータルから Concur へシングルサインオン（SSO）でアクセス\n\n### 2. 経費レポートを作成\n「新規レポート」→ 目的を選択（出張 / 接待 / 購入品）\n\n### 3. 経費を追加\n- 領収書をスキャンまたは写真撮影\n- Concurアプリで読み取ると自動入力される\n- 5,000円以上は領収書必須（それ未満は立替証明書でも可）\n\n### 4. 承認申請\n上長のメールアドレスを承認者に設定して提出\n\n## よくある却下理由\n- 領収書の日付・金額が読み取れない\n- 目的が「その他」のみで詳細なし\n- 接待の場合、参加者氏名・会社名の記載がない\n\n## 問い合わせ先\n経理部 — `keiri@example.com` または `#finance` Slackチャンネル"
+    },
+    {
+      "title": "オンボーディングチェックリスト（エンジニア向け）",
+      "tags": ["オンボーディング", "エンジニア", "新入社員"],
+      "authorId": "user_alice",
+      "viewCount": 134,
+      "body": "# オンボーディングチェックリスト（エンジニア向け）\n\n## 入社初日\n\n- [ ] 社員証・ICカード受け取り\n- [ ] PC初期設定（IT部門と共に）\n- [ ] 社内メール・Slackアカウント有効化\n- [ ] VPN設定\n- [ ] GitHub Organization への招待確認\n\n## 1週目\n\n- [ ] 開発環境セットアップ（README.md の手順に従う）\n- [ ] ステージング環境へのアクセス確認\n- [ ] チームメンバー全員と1on1（各15分）\n- [ ] コードレビュー文化の把握\n\n## 1ヶ月目\n\n- [ ] 最初のPRをマージ\n- [ ] スプリントレビューに参加\n- [ ] アーキテクチャ設計書を読む\n- [ ] インシデント対応フローを把握\n\n## 便利なリンク集\n- 社内Wiki: wiki.example.com\n- デプロイダッシュボード: deploy.example.com\n- モニタリング: grafana.example.com"
+    },
+    {
+      "title": "Git ブランチ戦略と PR テンプレート",
+      "tags": ["Git", "開発フロー", "GitHub"],
+      "authorId": "user_bob",
+      "viewCount": 61,
+      "body": "# Git ブランチ戦略と PR テンプレート\n\n## ブランチ命名規則\n\n```\nfeature/<ticket-id>-short-description\nfix/<ticket-id>-short-description\nhotfix/<ticket-id>-short-description\nchore/<description>\n```\n\n例: `feature/PROJ-123-add-user-auth`\n\n## ブランチフロー\n\n```\nmain ← 本番環境\n  └── develop ← 統合テスト環境\n        ├── feature/xxx\n        ├── fix/yyy\n        └── chore/zzz\n```\n\n- `main` への直接プッシュは禁止\n- `develop` → `main` へのマージはリリース時のみ\n\n## PR テンプレート\n\n```markdown\n## 概要\n何をなぜ変更したか（1-3行）\n\n## 変更内容\n- 変更点1\n- 変更点2\n\n## テスト\n- [ ] ユニットテスト追加・修正\n- [ ] 手動動作確認\n```\n\n## レビュー依頼のルール\n- 2名以上のApprovalが必要\n- 24時間以内にレビューを返す（難しい場合はコメントで連絡）"
+    },
+    {
+      "title": "AWS本番環境のデプロイ手順",
+      "tags": ["AWS", "デプロイ", "インフラ", "本番"],
+      "authorId": "user_bob",
+      "viewCount": 99,
+      "body": "# AWS本番環境のデプロイ手順\n\n## 前提条件\n- AWS CLI がセットアップ済み（`aws configure` 完了）\n- `prod-deployer` IAMロールの権限があること\n- デプロイ対象のPRが `main` にマージ済みであること\n\n## デプロイ手順\n\n### 1. GitHub Actions でのデプロイ（推奨）\nmain ブランチへのマージで自動デプロイが走ります。\nステータスは #deploy-notifications チャンネルで確認。\n\n### 2. 手動デプロイ（緊急時のみ）\n```bash\naws ecr get-login-password --region ap-northeast-1 | \\\n  docker login --username AWS --password-stdin 123456789.dkr.ecr.ap-northeast-1.amazonaws.com\n\ndocker build -t myapp .\ndocker tag myapp:latest 123456789.dkr.ecr.ap-northeast-1.amazonaws.com/myapp:latest\ndocker push 123456789.dkr.ecr.ap-northeast-1.amazonaws.com/myapp:latest\n\naws ecs update-service --cluster prod --service myapp --force-new-deployment\n```\n\n## ロールバック手順\n```bash\naws ecs update-service --cluster prod --service myapp \\\n  --task-definition myapp:<previous-revision>\n```\n\n## デプロイ後確認\n- Datadogダッシュボードでエラーレート確認（5分間）\n- CloudWatchアラームが発火していないことを確認"
+    },
+    {
+      "title": "React コンポーネント設計ガイド",
+      "tags": ["React", "フロントエンド", "設計", "コーディング規約"],
+      "authorId": "user_alice",
+      "viewCount": 73,
+      "body": "# React コンポーネント設計ガイド\n\n## コンポーネント分類\n\n### Container コンポーネント\n- データフェッチ・状態管理を担当\n- UIロジックを持たない\n- ファイル名: `XxxContainer.tsx`\n\n### Presentational コンポーネント\n- 受け取った props をレンダリングするだけ\n- テストしやすい\n- `stories/` にStorybookを書く\n\n## ファイル構成\n```\nsrc/components/\n  Button/\n    index.tsx\n    Button.tsx\n    Button.test.tsx\n    Button.stories.tsx\n```\n\n## 命名規則\n- コンポーネント名は PascalCase\n- Props型は `XxxProps`\n- カスタムフックは `useXxx`\n\n## 状態管理の指針\n- ローカル状態: `useState`\n- フォーム: React Hook Form\n- グローバル状態: Zustand（Reduxは使わない）\n- サーバー状態: TanStack Query\n\n## パフォーマンス\n- `memo`・`useMemo`・`useCallback` は計測してから適用\n- 不要な再レンダリングは React DevTools Profiler で特定"
+    },
+    {
+      "title": "データベース設計原則とマイグレーション手順",
+      "tags": ["データベース", "PostgreSQL", "マイグレーション", "設計"],
+      "authorId": "user_carol",
+      "viewCount": 45,
+      "body": "# データベース設計原則とマイグレーション手順\n\n## 命名規則\n- テーブル名: スネークケース複数形（`user_profiles`）\n- カラム名: スネークケース（`created_at`）\n- 主キー: `id`（UUID or BIGSERIAL）\n- 外部キー: 参照テーブル名_id（`user_id`）\n\n## インデックス設計\n- 外部キーは必ずインデックスを貼る\n- 検索条件に使うカラムにはインデックス\n- 複合インデックスはカーディナリティが高い方を先頭に\n\n## Prismaマイグレーション手順\n\n```bash\n# 開発環境\nnpx prisma migrate dev --name add_column_xxx\n\n# 本番環境（CIから実行）\nnpx prisma migrate deploy\n```\n\n## ゼロダウンタイムマイグレーションの原則\n1. **追加は安全** — カラム追加はいつでも可\n2. **削除は2フェーズ** — コードから参照を除去 → 次のリリースでカラム削除\n3. **NOT NULL追加** — デフォルト値を設定してから制約を追加\n\n## バックアップ\n- 本番DBは毎日午前3時にスナップショット（RDS自動）\n- 手動バックアップ: `aws rds create-db-snapshot ...`"
+    },
+    {
+      "title": "インシデント対応フロー（障害発生時）",
+      "tags": ["インシデント", "障害対応", "SRE", "運用"],
+      "authorId": "user_bob",
+      "viewCount": 112,
+      "body": "# インシデント対応フロー（障害発生時）\n\n## 重大度定義\n\n| レベル | 定義 | 対応時間 |\n|--------|------|---------|\n| P1 | 全サービス停止 / 売上に直接影響 | 即時 |\n| P2 | 主要機能の一部停止 | 30分以内 |\n| P3 | 軽微な機能低下 | 翌営業日 |\n\n## P1発生時の行動フロー\n\n1. **検知** — アラート受信 or 顧客報告\n2. **宣言** — `#incident` チャンネルに「P1インシデント宣言」を投稿\n3. **IC指名** — インシデントコマンダー（IC）を決める\n4. **調査** — ログ・メトリクスを確認、根本原因の仮説を立てる\n5. **対処** — ロールバック / フィーチャーフラグ / スケールアウト\n6. **解消** — 正常化を確認\n7. **振り返り** — 48時間以内にポストモーテム作成\n\n## 有用なコマンド集\n```bash\n# 直近のエラーログ確認\naws logs filter-log-events --log-group-name /ecs/myapp --filter-pattern ERROR\n\n# ECSタスク一覧\naws ecs list-tasks --cluster prod --service-name myapp\n```\n\n## ポストモーテムテンプレート\n- 発生日時・解消日時\n- 影響範囲（ユーザー数・売上影響）\n- タイムライン\n- 根本原因\n- 恒久対策（担当者・期限付き）"
+    },
+    {
+      "title": "コードレビューの進め方と文化",
+      "tags": ["コードレビュー", "開発文化", "GitHub"],
+      "authorId": "user_alice",
+      "viewCount": 88,
+      "body": "# コードレビューの進め方と文化\n\n## レビューの目的\n\nコードレビューは「バグ発見」だけでなく：\n- 知識共有（チーム全員がコードを理解する）\n- 設計品質の向上\n- 新人のメンタリング\n\n## レビュアーへのガイド\n\n### すること\n- 具体的な改善提案を添える（「〇〇に変えると△△の理由でよいです」）\n- Nitpick（細かい指摘）には `nit:` プレフィックスをつける\n- 良いコードは積極的に褒める\n\n### しないこと\n- 「なんで？」だけのコメント（必ず理由を添える）\n- スタイルの好みを押し付ける（Linterに任せる）\n- 緊急でない指摘で何日もブロックしない\n\n## 作成者へのガイド\n- PRの説明にスクリーンショット・動作確認内容を書く\n- 大きなPRは分割する（目安: 変更行数300行以内）\n- 「なぜ」この実装を選んだかをコメントに残す\n\n## コメントの種別\n- `blocking:` — これが直るまでApproveしない\n- `nit:` — 直してほしいが必須ではない\n- `question:` — 理解のための質問（指摘ではない）\n- `suggestion:` — 提案（採否は作成者に委ねる）"
+    },
+    {
+      "title": "ローカル開発環境の構築手順（Node.js / Docker）",
+      "tags": ["開発環境", "Docker", "Node.js", "セットアップ"],
+      "authorId": "user_carol",
+      "viewCount": 156,
+      "body": "# ローカル開発環境の構築手順（Node.js / Docker）\n\n## 必要なツール\n- Node.js 20 LTS（nvm 推奨）\n- Docker Desktop 4.x\n- Git 2.x\n- VSCode（推奨拡張: ESLint, Prettier, Prisma）\n\n## セットアップ手順\n\n### 1. リポジトリをクローン\n```bash\ngit clone git@github.com:example/myapp.git\ncd myapp\n```\n\n### 2. Node.jsバージョンを合わせる\n```bash\nnvm use\nnpm install\n```\n\n### 3. 環境変数を設定\n```bash\ncp .env.example .env\n```\n\n### 4. Docker でミドルウェアを起動\n```bash\ndocker compose up -d\n```\n\n### 5. DBマイグレーション & シードデータ投入\n```bash\nnpx prisma migrate dev\nnpx prisma db seed\n```\n\n### 6. 開発サーバー起動\n```bash\nnpm run dev\n```\n\n## よくある問題\n\n### ポートが使われている\n```bash\nlsof -i :3000\nkill -9 <PID>\n```\n\n### Dockerコンテナが起動しない\n```bash\ndocker compose logs\ndocker compose down -v && docker compose up -d\n```"
+    },
+    {
+      "title": "セキュリティインシデント発生時の報告手順",
+      "tags": ["セキュリティ", "インシデント", "コンプライアンス"],
+      "authorId": "user_carol",
+      "viewCount": 34,
+      "body": "# セキュリティインシデント発生時の報告手順\n\n## セキュリティインシデントの定義\n- 不正アクセス・不正ログインの疑い\n- 個人情報の漏洩の可能性\n- マルウェア感染\n- フィッシング攻撃の被害\n\n## 即時対応（発覚後30分以内）\n\n1. **該当システムをネットワークから切断**（感染拡大防止）\n2. **セキュリティ担当（security@example.com）へ連絡**\n3. **証拠保全** — スクリーンショット・ログをそのまま保存（操作しない）\n4. **上長への報告**\n\n## やってはいけないこと\n- 自分で原因調査しようとしてシステムを操作する\n- SNS・社外への情報共有（情報漏洩のリスク）\n- 「大丈夫かも」と様子を見る\n\n## 報告に含める情報\n- 発覚日時・経緯\n- 影響を受けたシステム・データ\n- 現在の状態（継続中 / 収束済み）\n\n## 外部機関への報告\n個人情報漏洩の場合、個人情報保護委員会への報告が法律上必要（72時間以内）。\n法務・コンプライアンス部門と連携して対応します。"
+    },
+    {
+      "title": "会議運営の標準化ガイド",
+      "tags": ["会議", "コミュニケーション", "生産性"],
+      "authorId": "user_alice",
+      "viewCount": 29,
+      "body": "# 会議運営の標準化ガイド\n\n## 会議を開く前のチェック\n- [ ] この会議は非同期（Slack/Notion）では解決できないか？\n- [ ] 参加者全員が本当に必要か？\n- [ ] アジェンダを24時間前までに共有したか？\n\n## 会議のロール\n- **ファシリテーター** — 時間管理・議論の方向づけ\n- **書記** — Notionにリアルタイムで議事録\n- **タイムキーパー** — 残り5分で通知\n\n## 終了時の確認事項\n- ネクストアクション（誰が・何を・いつまでに）を全員で確認\n- 議事録のリンクを参加者全員にSlackで共有\n\n## 会議の種類と推奨頻度\n| 種類 | 頻度 | 時間 |\n|------|------|------|\n| デイリースタンドアップ | 毎朝 | 15分 |\n| スプリントレビュー | 2週間毎 | 1時間 |\n| 1on1 | 週1 | 30分 |\n| 全社会議 | 月1 | 1時間 |"
+    },
+    {
+      "title": "TypeScript 型定義のベストプラクティス",
+      "tags": ["TypeScript", "型定義", "コーディング規約", "フロントエンド"],
+      "authorId": "user_carol",
+      "viewCount": 52,
+      "body": "# TypeScript 型定義のベストプラクティス\n\n## 基本方針\n- `any` は原則禁止（`unknown` を使う）\n- `as` キャストは最小限に（型ガードを優先）\n- 型は使う場所の近くに定義する\n\n## 型の使い分け\n\n### interface vs type\n- オブジェクト形状の定義 → `interface`（extends できるため）\n- ユニオン型・マップ型 → `type`\n\n```typescript\n// Good\ninterface User {\n  id: string;\n  name: string;\n}\n\ntype Status = \"active\" | \"inactive\" | \"banned\";\ntype UserMap = Record<string, User>;\n```\n\n### 型ガード\n```typescript\nfunction isUser(value: unknown): value is User {\n  return typeof value === \"object\" && value !== null && \"id\" in value;\n}\n```\n\n### Zodによるランタイムバリデーション\n```typescript\nimport { z } from \"zod\";\n\nconst UserSchema = z.object({\n  id: z.string().cuid(),\n  name: z.string().min(1).max(100),\n});\n\ntype User = z.infer<typeof UserSchema>;\n```\n\n## 便利なユーティリティ型\n- `Partial<T>` — 全フィールドをオプショナルに\n- `Required<T>` — 全フィールドを必須に\n- `Pick<T, K>` — 一部フィールドだけ抽出\n- `Omit<T, K>` — 一部フィールドを除外\n- `ReturnType<F>` — 関数の戻り値の型"
+    },
+    {
+      "title": "リモートワーク時のコミュニケーションガイドライン",
+      "tags": ["リモートワーク", "コミュニケーション", "働き方"],
+      "authorId": "user_alice",
+      "viewCount": 41,
+      "body": "# リモートワーク時のコミュニケーションガイドライン\n\n## 非同期コミュニケーションを基本に\n\nリモートでは「今すぐ返事」は期待しない。\nSlackのメッセージには**当日中**の返信を目標とし、それ以上かかる場合は一言「確認します」と返す。\n\n## 稼働状況の共有\n- 朝会（Slack `#standup`）に「今日やること」を投稿\n- 離席・終業時は Slack のステータスを変更\n- 体調不良・急用の場合は上長と `#team-xxx` チャンネルに連絡\n\n## ビデオ会議のエチケット\n- 開始1分前には入室\n- カメラONを推奨（義務ではない）\n- マイクはミュートをデフォルトに\n- 背景はぼかし or バーチャル背景\n\n## ドキュメントファースト\n- 口頭で決まったことは必ずNotionやSlackに残す\n- 「言った言わない」を防ぐため、決定事項はテキストで確認を取る\n\n## 集中タイムの設定\n毎日 13:00-15:00 は「集中ブロック」としてミーティング不可。\n急ぎの確認は直接DM可。\n\n## メンタルヘルス\n- 業務後は仕事用Slackをオフ（通知を切ることを推奨）\n- バーンアウトのサインに気づいたら1on1で相談"
+    }
+  ]
+}
